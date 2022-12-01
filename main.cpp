@@ -1,7 +1,18 @@
-double my_pow(double num, unsigned int deg) {
+double my_pow(double num, int deg) {
     double result = 1;
-    for(long i = 0; i < deg; i++) {
-        result *= num;
+    if(deg < 0) 
+    {
+        deg = -deg;
+        for(long i = 0; i < deg; i++) 
+        {
+            result *= num;
+        }
+        return 1 / result;
     }
-    return result;
+    else {
+        for (long i = 0; i < deg; i++) {
+            result *= num;
+        }
+        return result;
+    }
 }
